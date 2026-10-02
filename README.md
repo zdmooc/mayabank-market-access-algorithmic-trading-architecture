@@ -133,7 +133,7 @@ Current target:
 - **I07** colocation / on-prem / cloud placement;
 - **I08** resilience, HA/DR and degraded modes;
 - **I09** security, entitlement, audit and observability;
-- **I10** executable synthetic lab — deferred until I01/I02 validation;
+- **I10** executable synthetic lab — IMPLEMENTED / paper-only;
 - **I11** performance and failure evidence pack;
 - **I12** interview/demo pack and portfolio graduation.
 
@@ -157,6 +157,19 @@ No production Market Access runtime is claimed.
 - [Resilience & observability](docs/05-resilience-observability.md)
 - [Security controls](docs/06-security-controls.md)
 - [Interview pack](docs/07-interview-pack.md)
+- [I02 — FIX / session / recovery](docs/i02/README.md)
+- [I03 — Market Data / entitlements](docs/i03/README.md)
+- [I04 — Pre-trade controls / regulation](docs/i04/README.md)
+- [I05 — Time / latency / NFR](docs/i05/README.md)
+- [I06 — RUN / incidents / venue migration](docs/i06/README.md)
+- [I07 — Hybrid placement](docs/i07/README.md)
+- [I08 — Resilience / HA-DR](docs/i08/README.md)
+- [I09 — Security / observability](docs/i09/README.md)
+- [I10 — Synthetic runtime](docs/i10/README.md)
+- [I11 — Evidence](docs/i11/README.md)
+- [I12 — Interview / demo](docs/i12/README.md)
+- [I12 — Interview answer key](docs/i12/interview-answer-key.md)
+- [CI evidence 2026-10-02](evidence/CI_EVIDENCE_2026-10-02.md)
 - [ADR-001 — Keep the latency-critical hot path close to venues](adr/ADR-001-hot-path-placement.md)
 - [ADR-002 — Do not treat cloud migration as a blanket target](adr/ADR-002-cloud-boundary.md)
 
