@@ -41,3 +41,15 @@ Use:
 - this repository as a current reference architecture/lab.
 
 Do not claim recent production HFT or direct exchange connectivity unless documented separately.
+
+
+## I01 validation before specialist claims
+
+Before presenting the repository as a validated Market Access learning asset, pass the I01 human gate in `docs/i01/10-validation-checklist.md`.
+
+The repository may currently be described as:
+- mission-aligned reference architecture;
+- I01 content complete;
+- human validation pending.
+
+Do not describe I01 as mastered or validated until that gate is passed.
