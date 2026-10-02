@@ -2,7 +2,7 @@
 
 ## Statut
 
-**CONTENT_COMPLETE / HUMAN_VALIDATION_PENDING**
+**USER_VALIDATED — 2026-10-02**
 
 I01 n'est pas considéré DONE tant que l'architecte ne peut pas expliquer les sujets ci-dessous sans notes.
 
@@ -65,3 +65,8 @@ Puis ajouter :
 - **<17/20** : I01 reste HUMAN_VALIDATION_PENDING.
 
 Le passage à I02 n'est autorisé qu'après validation de cette grille.
+
+
+## Validation record — 2026-10-02
+
+The repository owner explicitly confirmed I01 validation after reviewing the architecture schema. The 20-question sequence remains available for interview rehearsal but no longer blocks I02 implementation.

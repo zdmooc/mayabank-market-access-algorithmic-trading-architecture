@@ -139,9 +139,9 @@ Current target:
 
 ## Current status
 
-**I00 DONE / I01 CONTENT_COMPLETE / HUMAN_VALIDATION_PENDING / I02 BLOCKED**
+**I00→I12 IMPLEMENTED / I01 USER_VALIDATED / SYNTHETIC EVIDENCE GATE ACTIVE**
 
-I01 documentation is complete, but I01 is not VALIDATED until the 20-question and whiteboard gate is passed without notes. I10 remains deferred.
+I01 was explicitly validated by the repository owner on 2026-10-02 after review with the architecture schema. Interview questions remain a rehearsal activity. I02→I12 are now implemented as architecture, synthetic runtime, evidence and interview assets.
 
 No production Market Access runtime is claimed.
 
@@ -163,3 +163,21 @@ No production Market Access runtime is claimed.
 ## Disclaimer
 
 MayaBank is a fictional portfolio environment. Product names and public protocols may be referenced for learning and architecture comparison. No confidential client architecture is represented here.
+
+
+## Completion baseline — 2026-10-02
+
+The I02→I12 baseline is implemented:
+- I02 FIX/FIXT/FIXP session, sequence and recovery architecture;
+- I03 Market Data, book/recovery and entitlements;
+- I04 deterministic pre-trade controls and regulatory traceability;
+- I05 time architecture, latency and jitter;
+- I06 RUN, incidents, RCA and venue migration;
+- I07 colocation/on-prem/cloud placement;
+- I08 resilience, HA/DR and degraded modes;
+- I09 security, audit and observability;
+- I10 executable synthetic Python lab;
+- I11 automated failure/performance evidence harness;
+- I12 interview/demo pack.
+
+Truth boundary: the runtime is synthetic/paper-only. It does not prove production HFT, direct exchange connectivity, venue certification, production multicast Market Data or production low-latency performance.
