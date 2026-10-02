@@ -19,8 +19,8 @@ Build a demonstrable reference architecture for a Senior Architect mission cover
 | I08 | Resilience | session recovery, gateway redundancy, degraded/cancel-only, HA/DR | IMPLEMENTED |
 | I09 | Security + observability | IAM/secrets/network/audit + SLI/SLO/telemetry | IMPLEMENTED |
 | I10 | Synthetic runtime | paper order flow, risk, FIX-like session simulator, venue/drop copy | IMPLEMENTED_SYNTHETIC |
-| I11 | Evidence | automated failure tests + synthetic latency benchmark + CI | IMPLEMENTED / CI_EVIDENCE_PENDING |
-| I12 | Interview/demo pack | 15-minute demo, questions, trade-offs, truth matrix | IMPLEMENTED |
+| I11 | Evidence | 10 automated tests + demo + 5,000-sample synthetic benchmark | DONE — CI run 37043637911 SUCCESS |
+| I12 | Interview/demo pack | 15-minute demo, 20-question answer key, trade-offs, truth matrix | DONE / PORTFOLIO_READY |
 
 ## Reuse / Adapt / New
 
@@ -69,9 +69,9 @@ I02→I09 IMPLEMENTED
   ↓
 I10 SYNTHETIC RUNTIME IMPLEMENTED
   ↓
-I11 CI EVIDENCE PENDING
+I11 CI EVIDENCE PASS — run 37043637911
   ↓
-I12 INTERVIEW PACK IMPLEMENTED
+I12 DONE / PORTFOLIO_READY
 ```
 
 ## Cross-cutting baseline
@@ -85,4 +85,4 @@ The following concerns start now and are refined through later iterations:
 
 ## Final completion gate
 
-Architecture/content is implemented through I12. Portfolio graduation requires a green CI run for the synthetic runtime/evidence harness. Production-HFT and venue-connectivity claims remain excluded regardless of CI status.
+Architecture/content and the synthetic evidence gate are complete through I12. GitHub Actions run 37043637911 passed. The repository is PORTFOLIO_READY as a reference architecture + synthetic lab. Production-HFT, venue certification and direct-exchange claims remain excluded.

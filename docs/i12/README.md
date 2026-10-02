@@ -1,6 +1,6 @@
 # I12 — Interview / Demo Pack
 
-Status: **IMPLEMENTED**
+Status: **DONE / PORTFOLIO_READY**
 
 ## 15-minute flow
 0–2 min context/hot-near-elastic planes; 2–5 order lifecycle; 5–8 FIX/session recovery; 8–10 Market Data; 10–12 latency/resilience; 12–14 hybrid placement; 14–15 evidence and limits.
@@ -30,3 +30,15 @@ Status: **IMPLEMENTED**
 Truthful positioning: senior CIB/Trading Solution Architect consolidating Market Access/Electronic Trading specialization through reference architecture and a demonstrable synthetic lab.
 
 Never claim production HFT, direct exchange connectivity, venue certification, production FIXP/native or production multicast Market Data.
+
+
+## Graduation
+
+Graduation gate passed because:
+- I01 was user-validated;
+- I02→I09 architecture pack is implemented;
+- I10 synthetic runtime is executable;
+- I11 CI/evidence passed on run `37043637911`;
+- I12 interview answer key and 15-minute demo sequence exist.
+
+Portfolio-ready does not mean production-ready or HFT-certified.

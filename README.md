@@ -139,7 +139,7 @@ Current target:
 
 ## Current status
 
-**I00→I12 IMPLEMENTED / I01 USER_VALIDATED / SYNTHETIC EVIDENCE GATE ACTIVE**
+**I00→I12 COMPLETE / PORTFOLIO_READY / SYNTHETIC CI EVIDENCE PASS**
 
 I01 was explicitly validated by the repository owner on 2026-10-02 after review with the architecture schema. Interview questions remain a rehearsal activity. I02→I12 are now implemented as architecture, synthetic runtime, evidence and interview assets.
 
@@ -181,3 +181,16 @@ The I02→I12 baseline is implemented:
 - I12 interview/demo pack.
 
 Truth boundary: the runtime is synthetic/paper-only. It does not prove production HFT, direct exchange connectivity, venue certification, production multicast Market Data or production low-latency performance.
+
+
+## Synthetic evidence — PASS
+
+GitHub Actions run `37043637911` — **SUCCESS** on commit `9d589b7457032fc22c8f9e537f851626979a000d`.
+
+Observed:
+- 10 automated tests — PASS;
+- demo: ORD-1 FILLED 10000/0, ORD-2 REJECTED MAX_QTY;
+- synthetic risk-check benchmark: 5,000 samples;
+- p50 1.012 µs; p95 1.854 µs; p99 2.656 µs; p99.9 9.336 µs; max 27.892 µs; mean 1.122 µs.
+
+These timings are **PERFORMANCE_MEASURED_SYNTHETIC_ONLY** on a GitHub-hosted runner. They are not venue, network, FIX-engine or production-HFT latency measurements.
