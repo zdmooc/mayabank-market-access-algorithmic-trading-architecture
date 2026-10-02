@@ -57,7 +57,7 @@ Before then:
 
 ## I01 human gate
 
-I01 is not DONE because documentation exists. It becomes VALIDATED only after the architect passes the 20-question + whiteboard checklist in `docs/i01/10-validation-checklist.md` without notes.
+I01 is not considered validated merely because documentation exists. The repository owner explicitly validated I01 on 2026-10-02 after reviewing the architecture schema. The 20-question + whiteboard checklist in `docs/i01/10-validation-checklist.md` is retained for interview rehearsal, not as a remaining blocker.
 
 Current state:
 ```text
