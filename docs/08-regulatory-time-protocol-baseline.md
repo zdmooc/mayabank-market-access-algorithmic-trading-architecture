@@ -95,8 +95,10 @@ Références FIX officielles :
 
 LSEG documente DACS comme système d'entitlements pour RTDS, anciennement TREP.
 
-Référence :
-https://developers.lseg.com/en/article-catalog/article/introduction-dacs-entitlement-system-opendacs-developers
+Références :
+- DACS / RTDS : https://developers.lseg.com/en/article-catalog/article/introduction-dacs-entitlement-system-opendacs-developers
+- RTDS : https://www.lseg.com/en/data-analytics/market-data/data-management/real-time-distribution-system
+- RTMDS : https://www.lseg.com/en/data-analytics/market-data/data-management/real-time-managed-distribution-service
 
 ## 5. Legacy terminology
 
