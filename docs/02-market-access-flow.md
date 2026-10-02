@@ -1,4 +1,4 @@
-# I02 — Order Lifecycle and Market Access Flow
+# I01 — Order Lifecycle and Market Access Flow
 
 ## End-to-end order lifecycle
 
@@ -80,3 +80,10 @@ Typical actions:
 - suspend one venue;
 - switch to alternate gateway;
 - require reconciliation before resuming.
+
+
+## I01 deep-dive package
+
+The complete I01 learning and architecture pack is under [docs/i01/](i01/README.md).
+
+FIX session internals (sequence gaps, Resend Request, Gap Fill, persistent session recovery, FIXT/FIXP) are deliberately deferred to I02 and must not be marked complete before I01 human validation.
