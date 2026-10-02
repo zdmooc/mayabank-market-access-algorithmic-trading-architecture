@@ -124,22 +124,24 @@ See [ROADMAP.md](ROADMAP.md).
 Current target:
 
 - **I00** scope, truth model and repository boundaries;
-- **I01** trading-domain and market-access functional map;
-- **I02** end-to-end order lifecycle and protocol/session architecture;
-- **I03** OMS / EMS / SOR and deterministic pre-trade risk;
-- **I04** market-data architecture;
-- **I05** latency engineering and latency budget;
-- **I06** colocation / on-prem / cloud placement;
-- **I07** resilience, HA, DR and degraded modes;
-- **I08** observability, SLO and latency telemetry;
-- **I09** security, entitlement and audit;
-- **I10** executable synthetic lab;
+- **I01** Market Access domain + order lifecycle + OMS/EMS/SOR/Gateway boundaries + Drop Copy + pre-trade controls;
+- **I02** FIX/FIXT session model, sequence/recovery, FIXP principles and native-adapter boundary;
+- **I03** Market Data, feed handlers, entitlements and distribution;
+- **I04** pre-trade controls + MiFID II / RTS 6 traceability;
+- **I05** time architecture + latency/jitter/NFR;
+- **I06** RUN, incidents and exchange/venue migrations;
+- **I07** colocation / on-prem / cloud placement;
+- **I08** resilience, HA/DR and degraded modes;
+- **I09** security, entitlement, audit and observability;
+- **I10** executable synthetic lab — deferred until I01/I02 validation;
 - **I11** performance and failure evidence pack;
 - **I12** interview/demo pack and portfolio graduation.
 
 ## Current status
 
-**I00 BASELINE CREATED — REFERENCE_ARCHITECTURE / MISSION_ALIGNED**
+**I00 DONE / I01 CONTENT_COMPLETE / HUMAN_VALIDATION_PENDING / I02 BLOCKED**
+
+I01 documentation is complete, but I01 is not VALIDATED until the 20-question and whiteboard gate is passed without notes. I10 remains deferred.
 
 No production Market Access runtime is claimed.
 
@@ -148,6 +150,8 @@ No production Market Access runtime is claimed.
 - [Scope & truth model](docs/00-scope-and-truth-model.md)
 - [Reference architecture](docs/01-reference-architecture.md)
 - [Order and Market Access flow](docs/02-market-access-flow.md)
+- [I01 complete learning pack](docs/i01/README.md)
+- [Regulatory / time / protocol baseline](docs/08-regulatory-time-protocol-baseline.md)
 - [Latency engineering](docs/03-latency-engineering.md)
 - [Hybrid placement](docs/04-hybrid-placement.md)
 - [Resilience & observability](docs/05-resilience-observability.md)
