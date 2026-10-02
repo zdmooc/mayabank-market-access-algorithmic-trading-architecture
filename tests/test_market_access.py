@@ -47,4 +47,17 @@ class Tests(unittest.TestCase):
         self.assertEqual(e.kill(trader="T1"),["K1"])
         self.assertEqual(a.status,OrderStatus.PENDING_CANCEL); self.assertEqual(b.status,OrderStatus.NEW)
 
+    def test_instrument_entitlement_reject(self):
+        e=self.engine(); o=Order("E","OTHER",Side.BUY,10,10); e.submit(o)
+        self.assertEqual(o.reject_reason,"INSTRUMENT_NOT_ALLOWED")
+
+    def test_notional_limit_reject(self):
+        e=self.engine(); o=Order("N","MAYA",Side.BUY,60_000,100); e.submit(o)
+        self.assertEqual(o.reject_reason,"MAX_NOTIONAL")
+
+    def test_overfill_is_rejected(self):
+        e=self.engine(); o=Order("O","MAYA",Side.BUY,10,10); e.submit(o)
+        with self.assertRaises(ValueError):
+            e.fill("O",11)
+
 if __name__=="__main__": unittest.main()
