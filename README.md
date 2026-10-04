@@ -107,15 +107,49 @@ Cloud is therefore treated as a placement option, not as a blanket migration tar
 - latency observability and SLOs;
 - interview/demo material for Market Access architecture.
 
-### Reused from the wider MayaBank portfolio
+### Portfolio ownership and consumption model
 
-- **TradeOps-GenAI-Integration**: AI/GenAI, RAG, agents, HITL and paper-trading workflow;
-- **shared-platform-services-openshift**: common platform services;
-- **mayabank-api-management-architecture**: enterprise API patterns;
-- **mayabank-kafka-ddd-openshift**: event-driven integration patterns;
-- **mayabank-azure-cloud-ai-platform**: Azure landing-zone and hybrid-cloud patterns.
+**PRODUCT_OWNED**
 
-The archived `openshift2026-openshift-local-trading-gateway` remains historical only and is not revived as the primary proof for this mission.
+- Market Access hot path;
+- FIX/session/sequence/recovery semantics;
+- deterministic pre-trade risk;
+- execution-oriented Market Data path;
+- Drop Copy/reconciliation;
+- latency/time evidence and hybrid placement decisions.
+
+**CONSUME_SHARED — outside the latency-critical hot path**
+
+- identity/OIDC contract;
+- OpenTelemetry/observability contract;
+- secrets/PKI conventions;
+- GitOps conventions;
+- quality gates.
+
+The canonical declaration is `platform-consumption/capability-consumption.yaml`, using the portfolio `CapabilityConsumption` API `platform.mayabank.example/v1alpha1`.
+
+**REFERENCE_ONLY**
+
+- `TradeOps-GenAI-Integration` — paper/shadow workflow and AI/HITL reference;
+- `mayabank-kafka-ddd-openshift` — eventing/audit/replay reference outside the synchronous order path;
+- `mayabank-azure-cloud-ai-platform` — Azure/hybrid patterns;
+- `mayabank-api-management-architecture` — control/admin/reporting API patterns only.
+
+**LEGACY**
+
+- `openshift2026-openshift-local-trading-gateway` remains archived/historical and is not revived as the primary proof for this mission.
+
+### Shared Platform boundary
+
+`CapabilityConsumption` is the canonical Kubernetes Platform API in the current portfolio governance. This repository declares intent only; it does not claim a Market Access Kubernetes/OpenShift deployment or Platform Operator runtime evidence.
+
+Shared capabilities must not become synchronous dependencies of:
+
+```text
+Order → Pre-Trade Risk → Market Access Gateway → Venue
+```
+
+OIDC, OTel, GitOps, secrets and quality integration belong to control/near/elastic planes unless explicit latency evidence justifies otherwise.
 
 ## Roadmap
 
@@ -207,3 +241,20 @@ Observed:
 - p50 1.012 µs; p95 1.854 µs; p99 2.656 µs; p99.9 9.336 µs; max 27.892 µs; mean 1.122 µs.
 
 These timings are **PERFORMANCE_MEASURED_SYNTHETIC_ONLY** on a GitHub-hosted runner. They are not venue, network, FIX-engine or production-HFT latency measurements.
+
+
+## H1 — Platform alignment — 2026-10-04
+
+Status: **STATIC_CONSUMER_CONTRACT_PREPARED**.
+
+The repository now exposes a `platform-consumption/` profile aligned with D-091/D-093:
+
+- `CapabilityConsumption` v1alpha1 declaration;
+- `PRODUCT_OWNED` Market Access domain capabilities;
+- shared identity/observability/secrets/GitOps/quality intent;
+- Kafka/Azure/API Management/TradeOps kept `REFERENCE_ONLY`;
+- `Observe` + `Retain` lifecycle;
+- no embedded shared-service endpoint or secret;
+- no claim of CRC/OpenShift deployment.
+
+Promotion to `STATIC_CONSUMER_CONTRACT_VERIFIED` requires green CI on the added contract tests.

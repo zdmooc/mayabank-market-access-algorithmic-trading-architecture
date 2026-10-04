@@ -1,0 +1,62 @@
+apiVersion: platform.mayabank.example/v1alpha1
+kind: CapabilityConsumption
+metadata:
+  name: market-access-reference
+spec:
+  consumer:
+    name: market-access
+    owner: market-access
+    environment: ci-reference
+  target:
+    namespace: market-access-lab
+
+  identity:
+    mode: CONSUME_SHARED
+  observability:
+    mode: CONSUME_SHARED
+  secrets:
+    mode: CONSUME_SHARED
+  gitops:
+    mode: CONSUME_SHARED
+  quality:
+    mode: CONSUME_SHARED
+
+  eventing:
+    mode: REFERENCE_ONLY
+  database:
+    mode: REFERENCE_ONLY
+  objectStorage:
+    mode: REFERENCE_ONLY
+
+  resources:
+    profile: medium
+  network:
+    profile: restricted
+
+  lifecycle:
+    adoptionPolicy: Observe
+    deletionPolicy: Retain
+
+  externalPlatforms:
+    tradeOps:
+      mode: REFERENCE_ONLY
+      owner: TradeOps-GenAI-Integration
+    kafkaEventing:
+      mode: REFERENCE_ONLY
+      owner: mayabank-kafka-ddd-openshift
+    azureHybrid:
+      mode: REFERENCE_ONLY
+      owner: mayabank-azure-cloud-ai-platform
+    apiManagement:
+      mode: REFERENCE_ONLY
+      owner: mayabank-api-management-architecture
+
+  ownedCapabilities:
+    - market-access-hot-path
+    - fix-session-sequence-recovery
+    - deterministic-pre-trade-risk
+    - market-data-execution-path
+    - drop-copy-reconciliation
+    - latency-time-evidence
+    - hybrid-placement
+    - synthetic-market-access-lab

@@ -86,3 +86,18 @@ The following concerns start now and are refined through later iterations:
 ## Final completion gate
 
 Architecture/content and the synthetic evidence gate are complete through I12. GitHub Actions run 37043637911 passed. The repository is PORTFOLIO_READY as a reference architecture + synthetic lab. Production-HFT, venue certification and direct-exchange claims remain excluded.
+
+
+## H1 — Portfolio / Platform Alignment — 2026-10-04
+
+Post-I12 hardening, without reopening I00→I12.
+
+- [x] add canonical `platform-consumption/capability-consumption.yaml`;
+- [x] classify Market Access domain capabilities as `PRODUCT_OWNED`;
+- [x] classify Shared OIDC/OTel/secrets/GitOps/quality as `CONSUME_SHARED` outside the hot path;
+- [x] keep TradeOps/Kafka/Azure/API Management as `REFERENCE_ONLY`;
+- [x] keep archived trading gateway as `LEGACY`;
+- [x] add static contract tests;
+- [ ] promote contract to `STATIC_CONSUMER_CONTRACT_VERIFIED` after green CI.
+
+Truth boundary: H1 does not create a CRC/OpenShift runtime, a real FIX engine or a production Market Access deployment.
