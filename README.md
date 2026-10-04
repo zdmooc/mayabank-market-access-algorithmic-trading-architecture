@@ -245,7 +245,7 @@ These timings are **PERFORMANCE_MEASURED_SYNTHETIC_ONLY** on a GitHub-hosted run
 
 ## H1 — Platform alignment — 2026-10-04
 
-Status: **STATIC_CONSUMER_CONTRACT_PREPARED**.
+Status: **STATIC_CONSUMER_CONTRACT_VERIFIED**.
 
 The repository now exposes a `platform-consumption/` profile aligned with D-091/D-093:
 
@@ -257,4 +257,17 @@ The repository now exposes a `platform-consumption/` profile aligned with D-091/
 - no embedded shared-service endpoint or secret;
 - no claim of CRC/OpenShift deployment.
 
-Promotion to `STATIC_CONSUMER_CONTRACT_VERIFIED` requires green CI on the added contract tests.
+Contract promotion: **STATIC_CONSUMER_CONTRACT_VERIFIED** — GitHub Actions run `37224536855` SUCCESS, including 6 platform-consumption contract tests.
+
+
+## H1 evidence — PASS
+
+GitHub Actions run `37224536855` on commit `b165f22ea72b4aa4ece94d4a5d88d3d3ceeb6519` completed **SUCCESS**.
+
+Observed:
+- 16 total automated tests — PASS;
+- 6 new platform-consumption contract tests included;
+- synthetic demo and benchmark still pass;
+- no CRC/OpenShift runtime claim is promoted.
+
+H1 final status: **STATIC_CONSUMER_CONTRACT_VERIFIED**.

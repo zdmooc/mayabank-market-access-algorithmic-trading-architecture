@@ -98,6 +98,8 @@ Post-I12 hardening, without reopening I00→I12.
 - [x] keep TradeOps/Kafka/Azure/API Management as `REFERENCE_ONLY`;
 - [x] keep archived trading gateway as `LEGACY`;
 - [x] add static contract tests;
-- [ ] promote contract to `STATIC_CONSUMER_CONTRACT_VERIFIED` after green CI.
+- [x] promote contract to `STATIC_CONSUMER_CONTRACT_VERIFIED` — run `37224536855` SUCCESS, 16 tests total.
 
 Truth boundary: H1 does not create a CRC/OpenShift runtime, a real FIX engine or a production Market Access deployment.
+
+H1 final status: **DONE / STATIC_CONSUMER_CONTRACT_VERIFIED**.

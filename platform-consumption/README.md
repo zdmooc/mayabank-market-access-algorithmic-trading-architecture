@@ -2,7 +2,7 @@
 
 **Consumer:** `zdmooc/mayabank-market-access-algorithmic-trading-architecture`  
 **Role:** Market Access / Electronic Trading specialist  
-**Evidence level:** `STATIC_CONSUMER_CONTRACT_PREPARED`
+**Evidence level:** `STATIC_CONSUMER_CONTRACT_VERIFIED`
 
 ## Purpose
 
@@ -75,3 +75,10 @@ Those claims require separately observed runtime evidence.
 ## Validation
 
 `tests/test_platform_consumption.py` verifies the required contract surface and guards against embedding shared-platform endpoints or credentials.
+
+
+## Evidence
+
+GitHub Actions run `37224536855` — **SUCCESS**.
+
+The repository executed 16 tests, including the six `PlatformConsumptionContractTests` checks. This proves the static consumer contract shape and repository guardrails only; it does not prove a Kubernetes/OpenShift runtime consumption path.
