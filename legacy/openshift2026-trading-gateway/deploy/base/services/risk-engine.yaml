@@ -1,0 +1,76 @@
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: risk-engine-config
+    namespace: trading-apps
+  data:
+    KAFKA_BOOTSTRAP_SERVERS: "redpanda.trading-data.svc.cluster.local:9092"
+    POSTGRES_HOST: "postgres.trading-data.svc.cluster.local"
+    POSTGRES_PORT: "5432"
+    POSTGRES_DB: "tradingdb"
+    POSTGRES_USER: "trading"
+    POSTGRES_PASSWORD: "trading"
+    LOG_LEVEL: "INFO"
+    TOPIC_SIGNALS: "strategy.signals"
+TOPIC_ORDERS: "orders.new"
+MAX_NOTIONAL: "5000"
+  ---
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: risk-engine
+    namespace: trading-apps
+    labels:
+      app: risk-engine
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: risk-engine
+    template:
+      metadata:
+        labels:
+          app: risk-engine
+      spec:
+        containers:
+        - name: risk-engine
+          image: image-registry.openshift-image-registry.svc:5000/trading-apps/risk-engine:0.1.0
+          imagePullPolicy: Always
+          envFrom:
+          - configMapRef:
+              name: risk-engine-config
+          ports:
+          - containerPort: 8080
+            name: http
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+  ---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: risk-engine
+    namespace: trading-apps
+  spec:
+    selector:
+      app: risk-engine
+    ports:
+    - name: http
+      port: 80
+      targetPort: 8080

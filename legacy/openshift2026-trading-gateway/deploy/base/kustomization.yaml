@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../cluster/platform/redpanda.yaml
+  - ../../cluster/platform/postgres.yaml
+  - services/market-data-adapter.yaml
+  - services/bar-aggregator.yaml
+  - services/strategy-runner.yaml
+  - services/risk-engine.yaml
+  - services/order-manager.yaml
+  - services/broker-adapter-paper.yaml

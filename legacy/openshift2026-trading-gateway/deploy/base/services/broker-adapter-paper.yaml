@@ -1,0 +1,76 @@
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: broker-adapter-paper-config
+    namespace: trading-apps
+  data:
+    KAFKA_BOOTSTRAP_SERVERS: "redpanda.trading-data.svc.cluster.local:9092"
+    POSTGRES_HOST: "postgres.trading-data.svc.cluster.local"
+    POSTGRES_PORT: "5432"
+    POSTGRES_DB: "tradingdb"
+    POSTGRES_USER: "trading"
+    POSTGRES_PASSWORD: "trading"
+    LOG_LEVEL: "INFO"
+    TOPIC_ORDERS: "orders.new"
+TOPIC_FILLS: "fills.executed"
+TOPIC_ORDER_STATE: "orders.state"
+  ---
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: broker-adapter-paper
+    namespace: trading-apps
+    labels:
+      app: broker-adapter-paper
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: broker-adapter-paper
+    template:
+      metadata:
+        labels:
+          app: broker-adapter-paper
+      spec:
+        containers:
+        - name: broker-adapter-paper
+          image: image-registry.openshift-image-registry.svc:5000/trading-apps/broker-adapter-paper:0.1.0
+          imagePullPolicy: Always
+          envFrom:
+          - configMapRef:
+              name: broker-adapter-paper-config
+          ports:
+          - containerPort: 8080
+            name: http
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+  ---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: broker-adapter-paper
+    namespace: trading-apps
+  spec:
+    selector:
+      app: broker-adapter-paper
+    ports:
+    - name: http
+      port: 80
+      targetPort: 8080
