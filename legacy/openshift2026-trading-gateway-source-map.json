@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "source_repository": "zdmooc/openshift2026-openshift-local-trading-gateway",
+  "source_branch": "main",
+  "source_commit": "b180096701db3225aabcc5208aff2f0815065619",
+  "source_tree": "ea2ac257ff5800f943b4824f25e407588e4b3a58",
+  "target_repository": "zdmooc/mayabank-market-access-algorithmic-trading-architecture",
+  "source_archived": true,
+  "source_history_preserved": false,
+  "source_files": 47,
+  "method": "byte_exact_git_blob_recreation_sha_verified",
+  "runtime_claim": "NO_RUNTIME_VERIFIED",
+  "deletion_status": "PENDING_OWNER_MANUAL_DELETE_AFTER_MAIN_VERIFICATION",
+  "files": [
+    {
+      "source": ".gitignore",
+      "target": "legacy/openshift2026-trading-gateway/.gitignore",
+      "sha": "2a69eecb0ccef655cfc0ea31bb0abba0f9a77d30",
+      "mode": "100644",
+      "size": 182
+    },
+    {
+      "source": "LICENSE",
+      "target": "legacy/openshift2026-trading-gateway/LICENSE",
+      "sha": "e1626cd987edb6ea3648bd779f8c6c0a672aaf90",
+      "mode": "100644",
+      "size": 1070
+    },
+    {
+      "source": "Makefile",
+      "target": "legacy/openshift2026-trading-gateway/Makefile",
+      "sha": "76d30fdb871e19739768d54d2513c3fc7616b9ba",
+      "mode": "100644",
+      "size": 885
+    },
+    {
+      "source": "README.md",
+      "target": "legacy/openshift2026-trading-gateway/README.md",
+      "sha": "70675d14a20329aae0b1459ad278ac7551c0f703",
+      "mode": "100644",
+      "size": 1087
+    },
+    {
+      "source": "cluster/limitranges.yaml",
+      "target": "legacy/openshift2026-trading-gateway/cluster/limitranges.yaml",
+      "sha": "603fab1d8d092ab485b82c3dca62e983a08a7840",
+      "mode": "100644",
+      "size": 240
+    },
+    {
+      "source": "cluster/namespaces.yaml",
+      "target": "legacy/openshift2026-trading-gateway/cluster/namespaces.yaml",
+      "sha": "81ec7cdb48a0ca7fc83b345305ce895e0c2e95de",
+      "mode": "100644",
+      "size": 263
+    },
+    {
+      "source": "cluster/platform/keycloak-optional.yaml",
+      "target": "legacy/openshift2026-trading-gateway/cluster/platform/keycloak-optional.yaml",
+      "sha": "a3516730431a432122e247ae7efeb2a764ecc2a2",
+      "mode": "100644",
+      "size": 1501
+    },
+    {
+      "source": "cluster/platform/postgres.yaml",
+      "target": "legacy/openshift2026-trading-gateway/cluster/platform/postgres.yaml",
+      "sha": "cebfbbe0cdfa927e8ee2cfe411b610814e988424",
+      "mode": "100644",
+      "size": 1688
+    },
+    {
+      "source": "cluster/platform/redpanda.yaml",
+      "target": "legacy/openshift2026-trading-gateway/cluster/platform/redpanda.yaml",
+      "sha": "df728b19dba5c4499f869fd7ff13a6a5cb39e196",
+      "mode": "100644",
+      "size": 1451
+    },
+    {
+      "source": "cluster/resourcequotas.yaml",
+      "target": "legacy/openshift2026-trading-gateway/cluster/resourcequotas.yaml",
+      "sha": "5131903b5f8722f2ba94318abe7c96458c51f4f1",
+      "mode": "100644",
+      "size": 202
+    },
+    {
+      "source": "deploy/base/kustomization.yaml",
+      "target": "legacy/openshift2026-trading-gateway/deploy/base/kustomization.yaml",
+      "sha": "67dda38c6f6e4a40f330e25b3137494e668803cc",
+      "mode": "100644",
+      "size": 364
+    },
+    {
+      "source": "deploy/base/services/bar-aggregator.yaml",
+      "target": "legacy/openshift2026-trading-gateway/deploy/base/services/bar-aggregator.yaml",
+      "sha": "f2c3a7e90d3b7f4149b6c07531fc7bd27d72a9fe",
+      "mode": "100644",
+      "size": 1847
+    },
+    {
+      "source": "deploy/base/services/broker-adapter-paper.yaml",
+      "target": "legacy/openshift2026-trading-gateway/deploy/base/services/broker-adapter-paper.yaml",
+      "sha": "ef75ad579e81a5e62c388f3fd7a36f9054e29f68",
+      "mode": "100644",
+      "size": 1928
+    },
+    {
+      "source": "deploy/base/services/market-data-adapter.yaml",
+      "target": "legacy/openshift2026-trading-gateway/deploy/base/services/market-data-adapter.yaml",
+      "sha": "c9795fa1c8d92e1a8b0b3234460ec2cd73544c40",
+      "mode": "100644",
+      "size": 1890
+    },
+    {
+      "source": "deploy/base/services/order-manager.yaml",
+      "target": "legacy/openshift2026-trading-gateway/deploy/base/services/order-manager.yaml",
+      "sha": "8f984935a10fb31c5ad7d850f76b345dee37865d",
+      "mode": "100644",
+      "size": 2019
+    },
+    {
+      "source": "deploy/base/services/risk-engine.yaml",
+      "target": "legacy/openshift2026-trading-gateway/deploy/base/services/risk-engine.yaml",
+      "sha": "22fc2dcb1e667d6b772ccb1f6fdb0f0c46323b92",
+      "mode": "100644",
+      "size": 1829
+    },
+    {
+      "source": "deploy/base/services/strategy-runner.yaml",
+      "target": "legacy/openshift2026-trading-gateway/deploy/base/services/strategy-runner.yaml",
+      "sha": "4d84e848e81dfa8d4b2c10f470e996524f935b3f",
+      "mode": "100644",
+      "size": 1869
+    },
+    {
+      "source": "deploy/overlays/dev/kustomization.yaml",
+      "target": "legacy/openshift2026-trading-gateway/deploy/overlays/dev/kustomization.yaml",
+      "sha": "774a422d086a89a27e69bd6492e78d9510b610d4",
+      "mode": "100644",
+      "size": 91
+    },
+    {
+      "source": "docs/api_examples.md",
+      "target": "legacy/openshift2026-trading-gateway/docs/api_examples.md",
+      "sha": "abfe751a4b363a8d0b39a27dcefbcc2a97c869c6",
+      "mode": "100644",
+      "size": 361
+    },
+    {
+      "source": "docs/architecture.md",
+      "target": "legacy/openshift2026-trading-gateway/docs/architecture.md",
+      "sha": "bc03d3599183e8f75c2d84942a079e9d7e034291",
+      "mode": "100644",
+      "size": 1030
+    },
+    {
+      "source": "docs/runbooks.md",
+      "target": "legacy/openshift2026-trading-gateway/docs/runbooks.md",
+      "sha": "fb1d40a6d6a701c04d4700a8e087176984b3fdce",
+      "mode": "100644",
+      "size": 447
+    },
+    {
+      "source": "scripts/10_bootstrap_cluster.sh",
+      "target": "legacy/openshift2026-trading-gateway/scripts/10_bootstrap_cluster.sh",
+      "sha": "57686e2dadb1ac2911aaa7c5465d26b39c046a48",
+      "mode": "100644",
+      "size": 566
+    },
+    {
+      "source": "scripts/15_registry_login.sh",
+      "target": "legacy/openshift2026-trading-gateway/scripts/15_registry_login.sh",
+      "sha": "ed8990f268162c82c8841f10a7de56ef29ad7cc9",
+      "mode": "100644",
+      "size": 588
+    },
+    {
+      "source": "scripts/20_build_images.sh",
+      "target": "legacy/openshift2026-trading-gateway/scripts/20_build_images.sh",
+      "sha": "dcbfcdb223236ea48ac70334f0ee2d7b6924f895",
+      "mode": "100644",
+      "size": 288
+    },
+    {
+      "source": "scripts/25_push_images.sh",
+      "target": "legacy/openshift2026-trading-gateway/scripts/25_push_images.sh",
+      "sha": "0edd64edf099cffd0a594dba083f993d5b9ffcb5",
+      "mode": "100644",
+      "size": 548
+    },
+    {
+      "source": "scripts/30_deploy_apps.sh",
+      "target": "legacy/openshift2026-trading-gateway/scripts/30_deploy_apps.sh",
+      "sha": "c4b014e456ff23603dd60a18e95f4869003189cf",
+      "mode": "100644",
+      "size": 400
+    },
+    {
+      "source": "scripts/40_demo.sh",
+      "target": "legacy/openshift2026-trading-gateway/scripts/40_demo.sh",
+      "sha": "5a22a199d4281acd7927006756b9c8ef48f2b54b",
+      "mode": "100644",
+      "size": 764
+    },
+    {
+      "source": "scripts/90_clean.sh",
+      "target": "legacy/openshift2026-trading-gateway/scripts/90_clean.sh",
+      "sha": "5e421c53f9afafad98665b35918faed987742906",
+      "mode": "100644",
+      "size": 146
+    },
+    {
+      "source": "services/README.md",
+      "target": "legacy/openshift2026-trading-gateway/services/README.md",
+      "sha": "de11da3fdc8cf7e858e457fe8278ba57dad6362e",
+      "mode": "100644",
+      "size": 362
+    },
+    {
+      "source": "services/bar-aggregator/Dockerfile",
+      "target": "legacy/openshift2026-trading-gateway/services/bar-aggregator/Dockerfile",
+      "sha": "6668b058f4336c9aa9caf1a4679721aee2c1230b",
+      "mode": "100644",
+      "size": 226
+    },
+    {
+      "source": "services/bar-aggregator/app/main.py",
+      "target": "legacy/openshift2026-trading-gateway/services/bar-aggregator/app/main.py",
+      "sha": "737f87552f6e1564fe479886516e52ad1d96bd8e",
+      "mode": "100644",
+      "size": 5013
+    },
+    {
+      "source": "services/bar-aggregator/requirements.txt",
+      "target": "legacy/openshift2026-trading-gateway/services/bar-aggregator/requirements.txt",
+      "sha": "6bbdd09a66d221670f38ae33219fa830dbbe7a51",
+      "mode": "100644",
+      "size": 86
+    },
+    {
+      "source": "services/broker-adapter-paper/Dockerfile",
+      "target": "legacy/openshift2026-trading-gateway/services/broker-adapter-paper/Dockerfile",
+      "sha": "6668b058f4336c9aa9caf1a4679721aee2c1230b",
+      "mode": "100644",
+      "size": 226
+    },
+    {
+      "source": "services/broker-adapter-paper/app/main.py",
+      "target": "legacy/openshift2026-trading-gateway/services/broker-adapter-paper/app/main.py",
+      "sha": "5c4c2b1ddbb71c28e967a9cb1e2c38a100cef146",
+      "mode": "100644",
+      "size": 3258
+    },
+    {
+      "source": "services/broker-adapter-paper/requirements.txt",
+      "target": "legacy/openshift2026-trading-gateway/services/broker-adapter-paper/requirements.txt",
+      "sha": "6bbdd09a66d221670f38ae33219fa830dbbe7a51",
+      "mode": "100644",
+      "size": 86
+    },
+    {
+      "source": "services/market-data-adapter/Dockerfile",
+      "target": "legacy/openshift2026-trading-gateway/services/market-data-adapter/Dockerfile",
+      "sha": "6668b058f4336c9aa9caf1a4679721aee2c1230b",
+      "mode": "100644",
+      "size": 226
+    },
+    {
+      "source": "services/market-data-adapter/app/main.py",
+      "target": "legacy/openshift2026-trading-gateway/services/market-data-adapter/app/main.py",
+      "sha": "a5aba5b8bd4902b3f8d0b8ce050f9c782116186b",
+      "mode": "100644",
+      "size": 2580
+    },
+    {
+      "source": "services/market-data-adapter/requirements.txt",
+      "target": "legacy/openshift2026-trading-gateway/services/market-data-adapter/requirements.txt",
+      "sha": "6bbdd09a66d221670f38ae33219fa830dbbe7a51",
+      "mode": "100644",
+      "size": 86
+    },
+    {
+      "source": "services/order-manager/Dockerfile",
+      "target": "legacy/openshift2026-trading-gateway/services/order-manager/Dockerfile",
+      "sha": "6668b058f4336c9aa9caf1a4679721aee2c1230b",
+      "mode": "100644",
+      "size": 226
+    },
+    {
+      "source": "services/order-manager/app/main.py",
+      "target": "legacy/openshift2026-trading-gateway/services/order-manager/app/main.py",
+      "sha": "91bb3df495a26a8b28a519891f345472b83c1797",
+      "mode": "100644",
+      "size": 4489
+    },
+    {
+      "source": "services/order-manager/requirements.txt",
+      "target": "legacy/openshift2026-trading-gateway/services/order-manager/requirements.txt",
+      "sha": "6bbdd09a66d221670f38ae33219fa830dbbe7a51",
+      "mode": "100644",
+      "size": 86
+    },
+    {
+      "source": "services/risk-engine/Dockerfile",
+      "target": "legacy/openshift2026-trading-gateway/services/risk-engine/Dockerfile",
+      "sha": "6668b058f4336c9aa9caf1a4679721aee2c1230b",
+      "mode": "100644",
+      "size": 226
+    },
+    {
+      "source": "services/risk-engine/app/main.py",
+      "target": "legacy/openshift2026-trading-gateway/services/risk-engine/app/main.py",
+      "sha": "c3034b0cd58a7f64a360ba8a792ce1194cde841c",
+      "mode": "100644",
+      "size": 4249
+    },
+    {
+      "source": "services/risk-engine/requirements.txt",
+      "target": "legacy/openshift2026-trading-gateway/services/risk-engine/requirements.txt",
+      "sha": "6bbdd09a66d221670f38ae33219fa830dbbe7a51",
+      "mode": "100644",
+      "size": 86
+    },
+    {
+      "source": "services/strategy-runner/Dockerfile",
+      "target": "legacy/openshift2026-trading-gateway/services/strategy-runner/Dockerfile",
+      "sha": "6668b058f4336c9aa9caf1a4679721aee2c1230b",
+      "mode": "100644",
+      "size": 226
+    },
+    {
+      "source": "services/strategy-runner/app/main.py",
+      "target": "legacy/openshift2026-trading-gateway/services/strategy-runner/app/main.py",
+      "sha": "54365a37bcdc91e329086fc72d4c730c8f046c65",
+      "mode": "100644",
+      "size": 3776
+    },
+    {
+      "source": "services/strategy-runner/requirements.txt",
+      "target": "legacy/openshift2026-trading-gateway/services/strategy-runner/requirements.txt",
+      "sha": "6bbdd09a66d221670f38ae33219fa830dbbe7a51",
+      "mode": "100644",
+      "size": 86
+    }
+  ]
+}

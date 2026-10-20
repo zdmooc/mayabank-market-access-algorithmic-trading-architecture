@@ -1,0 +1,87 @@
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: order-manager-config
+    namespace: trading-apps
+  data:
+    KAFKA_BOOTSTRAP_SERVERS: "redpanda.trading-data.svc.cluster.local:9092"
+    POSTGRES_HOST: "postgres.trading-data.svc.cluster.local"
+    POSTGRES_PORT: "5432"
+    POSTGRES_DB: "tradingdb"
+    POSTGRES_USER: "trading"
+    POSTGRES_PASSWORD: "trading"
+    LOG_LEVEL: "INFO"
+    TOPIC_ORDERS: "orders.new"
+TOPIC_ORDER_STATE: "orders.state"
+  ---
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: order-manager
+    namespace: trading-apps
+    labels:
+      app: order-manager
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: order-manager
+    template:
+      metadata:
+        labels:
+          app: order-manager
+      spec:
+        containers:
+        - name: order-manager
+          image: image-registry.openshift-image-registry.svc:5000/trading-apps/order-manager:0.1.0
+          imagePullPolicy: Always
+          envFrom:
+          - configMapRef:
+              name: order-manager-config
+          ports:
+          - containerPort: 8080
+            name: http
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 10
+          resources:
+            requests:
+              cpu: 50m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+  ---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: order-manager
+    namespace: trading-apps
+  spec:
+    selector:
+      app: order-manager
+    ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: order-manager
+  namespace: trading-apps
+spec:
+  to:
+    kind: Service
+    name: order-manager
+  port:
+    targetPort: http

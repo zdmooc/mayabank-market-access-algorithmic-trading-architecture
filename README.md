@@ -271,3 +271,7 @@ Observed:
 - no CRC/OpenShift runtime claim is promoted.
 
 H1 final status: **STATIC_CONSUMER_CONTRACT_VERIFIED**.
+
+## Historique CRC — ancien Trading Gateway (20/10/2026)
+
+L'ancien laboratoire [OpenShift Local Trading Gateway](legacy/openshift2026-trading-gateway/README.md) est préservé séparément sous `legacy/openshift2026-trading-gateway/` : **47 fichiers copiés à l'identique**, avec leurs SHA Git dans le [manifeste de traçabilité](legacy/openshift2026-trading-gateway-source-map.json). Les services FastAPI, manifestes Redpanda/PostgreSQL, scripts CRC, exemples de trading papier et licence historique restent intacts. Il s'agit de **préservation documentaire et de code**, sans exécution CRC ni preuve de production ou de trading réel. Le dépôt historique archivé reste sous contrôle de suppression manuelle du propriétaire.

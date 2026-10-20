@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: trading-data
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: trading-apps
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: trading-platform
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: trading-ops
