@@ -137,7 +137,7 @@ The canonical declaration is `platform-consumption/capability-consumption.yaml`,
 
 **LEGACY**
 
-- `openshift2026-openshift-local-trading-gateway` remains archived/historical and is not revived as the primary proof for this mission.
+- The original `openshift2026-openshift-local-trading-gateway` was deleted manually by its owner on 20 October 2026 (verified GitHub 404); its 47 original files are preserved as a historical reference under `legacy/` and are not the primary runtime proof for this mission.
 
 ### Shared Platform boundary
 
@@ -274,4 +274,4 @@ H1 final status: **STATIC_CONSUMER_CONTRACT_VERIFIED**.
 
 ## Historique CRC — ancien Trading Gateway (20/10/2026)
 
-L'ancien laboratoire [OpenShift Local Trading Gateway](legacy/openshift2026-trading-gateway/README.md) est préservé séparément sous `legacy/openshift2026-trading-gateway/` : **47 fichiers copiés à l'identique**, avec leurs SHA Git dans le [manifeste de traçabilité](legacy/openshift2026-trading-gateway-source-map.json). Les services FastAPI, manifestes Redpanda/PostgreSQL, scripts CRC, exemples de trading papier et licence historique restent intacts. Il s'agit de **préservation documentaire et de code**, sans exécution CRC ni preuve de production ou de trading réel. Le dépôt historique archivé reste sous contrôle de suppression manuelle du propriétaire.
+L'ancien laboratoire [OpenShift Local Trading Gateway](legacy/openshift2026-trading-gateway/README.md) est préservé séparément sous `legacy/openshift2026-trading-gateway/` : **47 fichiers copiés à l'identique**, avec leurs SHA Git dans le [manifeste de traçabilité](legacy/openshift2026-trading-gateway-source-map.json). Les services FastAPI, manifestes Redpanda/PostgreSQL, scripts CRC, exemples de trading papier et licence historique restent intacts. Il s'agit de **préservation documentaire et de code**, sans exécution CRC ni preuve de production ou de trading réel. Le dépôt historique a été **supprimé manuellement par son propriétaire le 20/10/2026** (404 GitHub vérifié) ; les **47/47 fichiers d'origine** restent intacts sur `main`, mais l'historique Git autonome n'a pas été conservé.
